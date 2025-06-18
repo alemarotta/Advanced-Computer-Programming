@@ -1,0 +1,23 @@
+syntax="proto3";
+package compravendita;
+
+service ProductMaanager{
+    rpc buy(EmptyMessage) returns (ExtractedProduct){};
+    rpc sell(SerialNumber) returns (Ack){};
+}
+
+message EmptyMessage{
+
+}
+
+message SerialNumber{
+    int64 id=1;
+}
+
+message ExtractedProduct{
+    int64 id=1;
+}
+
+message Ack{
+    bool ack=1;
+}
